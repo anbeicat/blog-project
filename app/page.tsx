@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { blogPosts, projects } from "@/lib/data";
+import BlogCard from "@/components/BlogCard";
+import ProjectCard from "@/components/ProjectCard";
 
 const skills = [
   "React",
@@ -95,40 +97,7 @@ export default function HomePage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <article
-              key={project.id}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-            >
-              <h3 className="mb-3 text-xl font-semibold text-gray-900">
-                {project.title}
-              </h3>
-
-              <p className="mb-4 text-sm leading-6 text-gray-600">
-                {project.description}
-              </p>
-
-              <div className="mb-5 flex flex-wrap gap-2">
-                {project.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-700"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm font-medium text-blue-600 hover:text-blue-800"
-                >
-                  GitHub Repository →
-                </a>
-              )}
-            </article>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </section>
@@ -149,34 +118,7 @@ export default function HomePage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {blogPosts.slice(0, 2).map((post) => (
-            <Link
-              key={post.id}
-              href={`/blog/${post.id}`}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm hover:bg-gray-50"
-            >
-              <p className="mb-2 text-sm text-gray-500">
-                {post.createdAt} · {post.readingTime}
-              </p>
-
-              <h3 className="mb-3 text-xl font-semibold text-gray-900">
-                {post.title}
-              </h3>
-
-              <p className="mb-4 text-sm leading-6 text-gray-600">
-                {post.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-700"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
+            <BlogCard key={post.id} post={post} />
           ))}
         </div>
       </section>
