@@ -66,7 +66,7 @@ http://localhost:3000
 
 ## 배포 링크
 
-- Vercel: 준비 중
+- Vercel: https://blog-project-seven-orcin.vercel.app/
 
 배포가 완료되면 위 항목에 실제 서비스 링크를 추가할 예정입니다.
 
