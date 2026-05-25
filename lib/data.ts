@@ -39,15 +39,36 @@ export const projects: Project[] = [
         id: "portfolio-blog",
         title: "개인 기술 블로그 및 포트폴리오",
         description:
-            "Next.js와 TypeScript를 활용하여 개발한 개인 기술 블로그 및 포트폴리오 웹사이트입니다. 한국 IT 취업 준비 과정과 프론트엔드 학습 내용을 정리하기 위해 제작했습니다.",
+            "Next.js와 TypeScript를 활용하여 개발한 개인 기술 블로그 및 포트폴리오 웹사이트입니다.",
+        detail:
+            "이 프로젝트는 한국 IT 회사 취업을 준비하는 과정에서 프론트엔드 개발 역량을 정리하고, 학습 기록과 프로젝트 경험을 보여주기 위해 제작한 웹사이트입니다. Next.js App Router, 동적 라우팅, 컴포넌트 분리, TypeScript 타입 정의, Tailwind CSS 기반 반응형 UI를 학습하는 것을 목표로 했습니다.",
         techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+        features: [
+            "개인 소개 섹션",
+            "프로젝트 목록 표시",
+            "기술 블로그 목록",
+            "블로그 상세 페이지",
+            "블로그 검색 기능",
+            "프로젝트 상세 페이지",
+            "반응형 웹 디자인",
+        ],
+        learned: [
+            "Next.js App Router 구조 이해",
+            "동적 라우팅 구현",
+            "React 컴포넌트 분리",
+            "TypeScript interface 정의",
+            "Tailwind CSS 기반 UI 구현",
+            "GitHub를 활용한 프로젝트 관리",
+        ],
         githubUrl: "https://github.com/anbeicat/blog-project",
     },
     {
         id: "ai-task-manager",
         title: "AI 기반 업무 태스크 관리 플랫폼",
         description:
-            "React, Next.js, TypeScript, PostgreSQL, Prisma, AI API를 기반으로 개발 예정인 업무 관리 웹 서비스입니다. 프로젝트, 태스크, 마감일, AI 업무 요약 기능을 포함할 예정입니다.",
+            "React, Next.js, TypeScript, PostgreSQL, Prisma, AI API를 기반으로 개발 예정인 업무 관리 웹 서비스입니다.",
+        detail:
+            "AI 기반 업무 태스크 관리 플랫폼은 사용자가 프로젝트와 업무를 효율적으로 관리할 수 있도록 돕는 웹 서비스입니다. 프로젝트 생성, 태스크 CRUD, 마감일 관리, 업무 상태 관리, AI 업무 요약 및 태스크 추천 기능을 포함할 예정입니다.",
         techStack: [
             "React",
             "Next.js",
@@ -55,6 +76,22 @@ export const projects: Project[] = [
             "Prisma",
             "PostgreSQL",
             "AI API",
+        ],
+        features: [
+            "회원가입 및 로그인",
+            "프로젝트 CRUD",
+            "태스크 CRUD",
+            "마감일 관리",
+            "상태 및 우선순위 관리",
+            "AI 업무 요약",
+            "AI 태스크 추천",
+        ],
+        learned: [
+            "DB 기반 CRUD 구현",
+            "인증 흐름 이해",
+            "REST API 설계",
+            "AI API 연동",
+            "실무형 웹 서비스 구조 설계",
         ],
     },
 ];

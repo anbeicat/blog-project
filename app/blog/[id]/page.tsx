@@ -2,12 +2,13 @@
  * @Author: anqiao anqiao10@gmail.com
  * @Date: 2026-05-25 19:04:44
  * @LastEditors: anqiao anqiao10@gmail.com
- * @LastEditTime: 2026-05-25 19:05:03
+ * @LastEditTime: 2026-05-25 20:03:59
  * @description: 
  * @FilePath: /qiao-portfolio-blog/app/blog/[id]/page.tsx
  */
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/lib/data";
+import Link from "next/link";
 
 interface BlogDetailPageProps {
     params: Promise<{
@@ -50,6 +51,15 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
 
             <div className="rounded-xl border border-gray-200 bg-white p-8 leading-8 text-gray-700 shadow-sm">
                 {post.content}
+            </div>
+
+            <div className="mt-8">
+                <Link
+                    href="/blog"
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
+                    ← 블로그 목록으로 돌아가기
+                </Link>
             </div>
         </article>
     );

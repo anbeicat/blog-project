@@ -1,11 +1,4 @@
-/*
- * @Author: anqiao anqiao10@gmail.com
- * @Date: 2026-05-25 18:57:22
- * @LastEditors: anqiao anqiao10@gmail.com
- * @LastEditTime: 2026-05-25 19:54:32
- * @description: 
- * @FilePath: /qiao-portfolio-blog/components/ProjectCard.tsx
- */
+import Link from "next/link";
 import type { Project } from "@/types/project";
 
 interface ProjectCardProps {
@@ -34,7 +27,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 ))}
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+                <Link
+                    href={`/projects/${project.id}`}
+                    className="text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
+                    자세히 보기 →
+                </Link>
+
                 {project.githubUrl && (
                     <a
                         href={project.githubUrl}
@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         rel="noreferrer"
                         className="text-sm font-medium text-blue-600 hover:text-blue-800"
                     >
-                        GitHub Repository →
+                        GitHub →
                     </a>
                 )}
 
