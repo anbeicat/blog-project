@@ -2,18 +2,37 @@
  * @Author: anqiao anqiao10@gmail.com
  * @Date: 2026-05-25 19:04:44
  * @LastEditors: anqiao anqiao10@gmail.com
- * @LastEditTime: 2026-05-25 20:03:59
+ * @LastEditTime: 2026-05-25 20:15:09
  * @description: 
  * @FilePath: /qiao-portfolio-blog/app/blog/[id]/page.tsx
  */
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/lib/data";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 interface BlogDetailPageProps {
     params: Promise<{
         id: string;
     }>;
+}
+
+export async function generateMetadata({
+    params,
+}: BlogDetailPageProps): Promise<Metadata> {
+    const { id } = await params;
+    const post = blogPosts.find((item) => item.id === id);
+
+    if (!post) {
+        return {
+            title: "게시글을 찾을 수 없습니다 | Qiao Portfolio Blog",
+        };
+    }
+
+    return {
+        title: `${post.title} | Qiao Portfolio Blog`,
+        description: post.description,
+    };
 }
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
